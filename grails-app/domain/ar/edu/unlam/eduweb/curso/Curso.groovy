@@ -14,6 +14,10 @@ class Curso {
 		usuarios: Usuario, 
 		apuntes: Apunte
 	]
+	
+	static hasOne = [
+		profesor: Usuario	
+	]
 
     static constraints = {
     }

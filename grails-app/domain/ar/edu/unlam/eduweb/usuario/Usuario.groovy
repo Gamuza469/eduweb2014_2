@@ -27,6 +27,10 @@ class Usuario {
 		temas: Tema, 
 		actividades: Actividad
 	]
+	
+	static hasOne = [
+		cursoDocencia: Curso	
+	]
 
 	static transients = ['springSecurityService']
 
