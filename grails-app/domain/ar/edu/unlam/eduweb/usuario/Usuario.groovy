@@ -37,6 +37,7 @@ class Usuario {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		dni unique: true
 		alumnos nullable: true
 	}
 

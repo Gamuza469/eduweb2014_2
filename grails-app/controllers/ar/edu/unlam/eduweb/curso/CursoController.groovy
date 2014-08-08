@@ -18,9 +18,19 @@ class CursoController {
 			if (role.getAuthority() == 'ROLE_ADMIN') {
 				cursosDelUsuario = Curso.list()
 			} else if (role.getAuthority() == 'ROLE_ALUMNO') {
-				cursosDelUsuario = Alumno.findAllByAlumno(usuarioConectado).toList()
+				def cursoCriteria = Curso.createCriteria()
+					
+				cursosDelUsuario = cursoCriteria.list() {
+					alumnos {
+						eq('alumno', usuarioConectado)
+					}
+				}
 			} else if (role.getAuthority() == 'ROLE_PROFESOR') {
-				cursosDelUsuario = usuarioConectado.cursos
+				def cursoCriteria = Curso.createCriteria()
+					
+				cursosDelUsuario = cursoCriteria.list() {
+					eq('profesor', usuarioConectado)
+				}
 			}
 		}
 		

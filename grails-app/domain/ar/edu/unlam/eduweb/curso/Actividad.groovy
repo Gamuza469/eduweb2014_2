@@ -10,7 +10,7 @@ class Actividad {
 	File archivo
 	
 	static belongsTo = [
-		curso: Curso	
+		curso: Curso
 	] 
 
     static constraints = { 

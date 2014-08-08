@@ -224,7 +224,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/comentario/delete':			  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
 	
 	//Rol
-	'/rol/create':				 	  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	/*'/rol/create':				 	  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
 	'/rol/save':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
 	
 	'/rol/index':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
@@ -233,7 +233,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/rol/edit':				 	  ['ROLE_ADMIN'],
 	'/rol/update':				 	  ['ROLE_ADMIN'],
 	
-	'/rol/delete':					  ['ROLE_ADMIN'],
+	'/rol/delete':					  ['ROLE_ADMIN'],*/
+	'/rol/**':					  ['permitAll'],
 	
 	//Alumno
 	'/alumno/create':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
