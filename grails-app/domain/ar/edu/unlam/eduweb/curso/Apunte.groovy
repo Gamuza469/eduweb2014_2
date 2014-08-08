@@ -4,11 +4,13 @@ class Apunte {
 	
 	String nombre
 	Date fecha
+	File archivo
 
 	static belongsTo = [
 		curso: Curso	
 	]
 	
     static constraints = {
+		archivo nullable: true
     }
 }

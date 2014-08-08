@@ -9,6 +9,11 @@ class Rol {
 	}
 
 	static constraints = {
-		authority blank: false, unique: true
+		authority blank: false, unique: true, inList: [
+			"ROLE_ADMIN",
+			"ROLE_DATA_ENTRY",
+			"ROLE_PROFESOR",
+			"ROLE_ALUMNO"
+		]
 	}
 }

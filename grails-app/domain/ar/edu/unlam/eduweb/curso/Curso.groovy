@@ -1,24 +1,25 @@
 package ar.edu.unlam.eduweb.curso
 
 import ar.edu.unlam.eduweb.foro.Tema
+import ar.edu.unlam.eduweb.usuario.Alumno
 import ar.edu.unlam.eduweb.usuario.Usuario
 
 class Curso {
 	
 	String nombre
 	String descripcion
+	Usuario profesor
+	
+	static belongsTo = Usuario
 	
 	static hasMany = [
 		temas: Tema, 
 		actividades: Actividad, 
-		usuarios: Usuario, 
+		alumnos: Alumno, 
 		apuntes: Apunte
-	]
-	
-	static hasOne = [
-		profesor: Usuario	
 	]
 
     static constraints = {
+		alumnos nullable: true
     }
 }

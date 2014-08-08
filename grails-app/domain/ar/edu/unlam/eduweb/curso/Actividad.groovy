@@ -2,22 +2,18 @@ package ar.edu.unlam.eduweb.curso
 
 class Actividad {
 	
-	Date fechaInicio
-	Date fechaEntrega
-	String consigna
 	String titulo
 	String tipo
+	String consigna
+	Date fechaInicio
+	Date fechaEntrega
 	File archivo
-	//Integer nota
-	//String estado
 	
 	static belongsTo = [
 		curso: Curso	
 	] 
 
     static constraints = { 
-		titulo ()
-		consigna ()
 		tipo inList: [
 				"Ejercitación",
 				"Trabajo Práctico Individual",
@@ -27,7 +23,6 @@ class Actividad {
 				"Examen Recuperatorio"
 		]
 		fechaInicio min: new Date()
-		fechaEntrega ()
 		archivo nullable: true
     }
 }

@@ -7,29 +7,29 @@ import ar.edu.unlam.eduweb.foro.Tema
 class Usuario {
 
 	transient springSecurityService
-
-	String username
-	String password
-	boolean enabled = true
-	boolean accountExpired
-	boolean accountLocked
-	boolean passwordExpired
 	
 	String nombre
 	String apellido
 	String dni
 	String email
 	
-	static belongsTo = ar.edu.unlam.eduweb.curso.Curso
+	String username
+	String password
+	
+	boolean enabled = true
+	boolean accountExpired
+	boolean accountLocked
+	boolean passwordExpired
 	
 	static hasMany = [
 		cursos: Curso, 
 		temas: Tema, 
-		actividades: Actividad
+		actividades: Actividad,
+		alumnos: Alumno
 	]
 	
-	static hasOne = [
-		cursoDocencia: Curso	
+	static mappedBy = [
+		cursos: 'profesor'
 	]
 
 	static transients = ['springSecurityService']
@@ -37,11 +37,16 @@ class Usuario {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		alumnos nullable: true
 	}
 
 	static mapping = {
 		password column: '`password`'
 	}
+	
+	static fecthMode = [
+		cursos: 'eager'
+	]
 
 	Set<Rol> getAuthorities() {
 		UsuarioRol.findAllByUsuario(this).collect { it.rol }

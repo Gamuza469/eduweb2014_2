@@ -119,6 +119,7 @@ log4j.main = {
 
 
 // Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'ar.edu.unlam.eduweb.usuario.Usuario'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'ar.edu.unlam.eduweb.usuario.UsuarioRol'
 grails.plugin.springsecurity.authority.className = 'ar.edu.unlam.eduweb.usuario.Rol'
@@ -134,8 +135,117 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/dbconsole/**' :                 ['permitAll'],
 	
 	
-	'/**' :                 ['permitAll']
+	//'/**' :                 		  ['ROLE_ADMIN'],
 	
+	//Usuario
+	/*'/usuario/create':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/usuario/save':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/usuario/index':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/usuario/show':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/usuario/edit':				  ['ROLE_ADMIN'],
+	'/usuario/update':				  ['ROLE_ADMIN'],
+	
+	'/usuario/delete':				  ['ROLE_ADMIN'],*/
+	'/usuario/**':				 	  ['permitAll'],
+	
+	//Curso
+	'/curso/create':				  ['ROLE_ADMIN'],
+	'/curso/save':					  ['ROLE_ADMIN'],
+	
+	'/curso/index':					  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/curso/show':					  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/curso/edit':					  ['ROLE_ADMIN'],
+	'/curso/update':				  ['ROLE_ADMIN'],
+	
+	'/curso/delete':				  ['ROLE_ADMIN'],
+	
+	//Tema
+	'/tema/create':					  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	'/tema/save':					  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	'/tema/index':					  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/tema/show':					  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/tema/edit':					  ['ROLE_ADMIN'],
+	'/tema/update':					  ['ROLE_ADMIN'],
+	
+	'/tema/delete':					  ['ROLE_ADMIN'],
+
+	//Actividad
+	'/actividad/create':			  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	'/actividad/save':				  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	'/actividad/index':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/actividad/show':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/actividad/edit':				  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	'/actividad/update':			  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	'/actividad/delete':			  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	
+	//Apunte
+	'/apunte/create':				  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	'/apunte/save':					  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	'/apunte/index':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/apunte/show':					  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/apunte/edit':					  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	'/apunte/update':				  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	'/apunte/delete':				  ['ROLE_ADMIN','ROLE_PROFESOR'],
+	
+	//Entrega
+	'/entrega/create':				  ['ROLE_ADMIN'],
+	'/entrega/save':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/entrega/index':				  ['ROLE_ADMIN'],
+	'/entrega/show':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/entrega/edit':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/entrega/update':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/entrega/delete':				  ['ROLE_ADMIN'],
+	 
+	//Comentario
+	'/comentario/create':			  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/comentario/save':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/comentario/index':			  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/comentario/show':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/comentario/edit':				  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/comentario/update':			  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	'/comentario/delete':			  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	
+	//Rol
+	'/rol/create':				 	  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/rol/save':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/rol/index':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/rol/show':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/rol/edit':				 	  ['ROLE_ADMIN'],
+	'/rol/update':				 	  ['ROLE_ADMIN'],
+	
+	'/rol/delete':					  ['ROLE_ADMIN'],
+	
+	//Alumno
+	'/alumno/create':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/alumno/save':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/alumno/index':				  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	'/alumno/show':					  ['ROLE_ADMIN','ROLE_DATA_ENTRY'],
+	
+	'/alumno/edit':				 	  ['ROLE_ADMIN'],
+	'/alumno/update':			 	  ['ROLE_ADMIN'],
+	
+	'/alumno/delete':				  ['ROLE_ADMIN']
 ]
 
 
