@@ -149,6 +149,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	
 	'/usuario/delete':				  ['ROLE_ADMIN'],*/
 	'/usuario/**':				 	  ['permitAll'],
+	'/chat/**':						  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/mensaje/**':						  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
 	
 	//Curso
 	'/curso/create':				  ['ROLE_ADMIN'],

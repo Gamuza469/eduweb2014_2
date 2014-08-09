@@ -7,6 +7,7 @@ class UrlMappings {
             }
         }
 
+		"/chat"(controller:"mensaje", action:"index")
         "/"(view:"/index")
         "500"(view:'/error')
 	}
