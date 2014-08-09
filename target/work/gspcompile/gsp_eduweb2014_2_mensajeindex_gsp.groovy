@@ -29,7 +29,7 @@ createTagBody(1, {->
 printHtmlPart(3)
 createTagBody(2, {->
 printHtmlPart(4)
-invokeTag('textField','g',10,['name':("nickname"),'value':(nombreUsuario)],-1)
+invokeTag('textField','g',10,['name':("nombreUsuario"),'value':(nombreUsuario)],-1)
 printHtmlPart(1)
 invokeTag('submitButton','g',11,['name':("Ingresar al Chat")],-1)
 printHtmlPart(3)
@@ -45,7 +45,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1407552308439L
+public static final long LAST_MODIFIED = 1407553426658L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

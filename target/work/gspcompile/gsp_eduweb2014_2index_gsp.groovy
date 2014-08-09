@@ -31,36 +31,38 @@ expressionOut.print(createLink(controller:'Curso', action: 'index'))
 printHtmlPart(6)
 expressionOut.print(createLink(controller:'Tema', action: 'index'))
 printHtmlPart(7)
-expressionOut.print(assetPath(src:'chicos2.png'))
+expressionOut.print(createLink(controller:'Mensaje', action: 'index'))
 printHtmlPart(8)
-createTagBody(2, {->
+expressionOut.print(assetPath(src:'chicos2.png'))
 printHtmlPart(9)
-expressionOut.print(applicationContext.springSecurityService.currentUser.username)
+createTagBody(2, {->
 printHtmlPart(10)
+expressionOut.print(applicationContext.springSecurityService.currentUser.username)
+printHtmlPart(11)
 })
 invokeTag('ifLoggedIn','sec',101,[:],2)
-printHtmlPart(11)
-expressionOut.print(assetPath(src:'computadora2.png'))
 printHtmlPart(12)
-for( c in (grailsApplication.controllerClasses.sort { it.fullName }) ) {
+expressionOut.print(assetPath(src:'computadora2.png'))
 printHtmlPart(13)
+for( c in (grailsApplication.controllerClasses.sort { it.fullName }) ) {
+printHtmlPart(14)
 createTagBody(3, {->
 expressionOut.print(c.fullName)
 })
 invokeTag('link','g',121,['controller':(c.logicalPropertyName)],3)
-printHtmlPart(14)
-}
 printHtmlPart(15)
+}
+printHtmlPart(16)
 })
 invokeTag('captureBody','sitemesh',126,[:],1)
-printHtmlPart(16)
+printHtmlPart(17)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1407547642158L
+public static final long LAST_MODIFIED = 1407559063656L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

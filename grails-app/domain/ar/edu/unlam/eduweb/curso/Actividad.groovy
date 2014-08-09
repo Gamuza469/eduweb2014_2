@@ -10,10 +10,11 @@ class Actividad {
 	File archivo
 	
 	static belongsTo = [
-		curso: Curso
+		curso: Curso 
 	] 
 
     static constraints = { 
+		titulo ()
 		tipo inList: [
 				"Ejercitación",
 				"Trabajo Práctico Individual",
@@ -22,7 +23,9 @@ class Actividad {
 				"Examen Final",
 				"Examen Recuperatorio"
 		]
+		consigna ()
 		fechaInicio min: new Date()
+		fechaEntrega ()
 		archivo nullable: true
     }
 }

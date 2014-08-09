@@ -13,5 +13,9 @@ class Comentario {
 	]
 
     static constraints = {
+		mensaje ()
+		autor ()
+		tema ()
+		fechaCreacion ()
     }
 }

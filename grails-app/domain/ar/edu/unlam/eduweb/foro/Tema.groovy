@@ -18,6 +18,11 @@ class Tema {
 	]
 
     static constraints = {
+		titulo ()
+		mensaje ()
+		fechaCreacion ()
+		curso ()
+		comentarios ()
 		bloqueado nullable: true
     }
 }

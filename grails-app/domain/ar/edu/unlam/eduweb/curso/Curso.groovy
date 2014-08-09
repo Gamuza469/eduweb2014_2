@@ -20,6 +20,12 @@ class Curso {
 	]
 
     static constraints = {
-		alumnos nullable: true
+		nombre ()
+		descripcion ()
+		profesor ()
+		actividades ()
+		apuntes()
+		temas ()
+		alumnos nullable: true, display: false
     }
 }

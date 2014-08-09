@@ -14,6 +14,8 @@ class Entrega {
 	]
 
     static constraints = {
+		alumno ()
+		actividad ()
 		estado inList: [
 			"No entregado",
 			"Entregado",
@@ -21,5 +23,7 @@ class Entrega {
 			"Desaprobado",
 			"Reentregar"	
 		]
+		nota ()
+		archivo ()
     }
 }

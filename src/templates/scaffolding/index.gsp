@@ -11,8 +11,8 @@
 		<div id="status" role="complementary">
 		    <a href="\${createLink(controller:'Curso', action: 'index')}" >Ver Cursos</a>
 			<a href="\${createLink(controller:'Tema', action: 'index')}" >Ingresar al Foro</a>
-			<a href="#">Chat</a>
-			<img src="\${assetPath(src:'chicos2.png')}" width='321' height='115'/>
+			<a href="\${createLink(controller:'Mensaje', action: 'index')}">Chat</a> 
+			<img src="\${assetPath(src:'chicos2.png')}" width='321' height='115'/> 
 		</div>
 		<a href="#list-${domainClass.propertyName}" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">

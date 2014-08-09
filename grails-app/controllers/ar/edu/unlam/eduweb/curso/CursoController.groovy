@@ -9,6 +9,10 @@ class CursoController {
 	
 	static scaffold = true
 	
+	def reload () {
+		org.codehaus.groovy.grails.scaffolding.view.ScaffoldingViewResolver.scaffoldedViews.clear()
+	}
+	
 	def index () {
 		def usuarioConectado = getAuthenticatedUser()
 		def roles = springSecurityService.getPrincipal().getAuthorities()

@@ -11,6 +11,9 @@ class Apunte {
 	]
 	
     static constraints = {
-		archivo nullable: true
+		nombre ()
+		fecha ()
+		curso ()
+		archivo nullable: true, display: false
     }
 }

@@ -124,9 +124,9 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'ar.edu.unlam.eduw
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'ar.edu.unlam.eduweb.usuario.UsuarioRol'
 grails.plugin.springsecurity.authority.className = 'ar.edu.unlam.eduweb.usuario.Rol'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
+	'/':                              ['ROLE_ADMIN','ROLE_DATA_ENTRY','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/index':                         ['ROLE_ADMIN','ROLE_DATA_ENTRY','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/index.gsp':                     ['ROLE_ADMIN','ROLE_DATA_ENTRY','ROLE_PROFESOR','ROLE_ALUMNO'],
 	'/assets/**':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
@@ -151,6 +151,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/usuario/**':				 	  ['permitAll'],
 	'/chat/**':						  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
 	'/mensaje/**':						  ['ROLE_ADMIN','ROLE_PROFESOR','ROLE_ALUMNO'],
+	'/curso/reload':						  ['permitAll'],
 	
 	//Curso
 	'/curso/create':				  ['ROLE_ADMIN'],
