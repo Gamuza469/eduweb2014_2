@@ -1,3 +1,43 @@
+/* Propios */
+.logout{
+	width: 150px;
+	height:30px;
+	float:right;
+	text-decoration:none;
+	color:white;
+	margin-left:400px;
+	margin-top:-35px;
+	text-align: center;
+	background-color:#ffffff ;
+	border:1px solid #BDBDBD;
+}
+
+#status {
+	background-color: #eee;
+	border: .9em solid #fff;
+	margin: 0 2em 1em;
+	margin-left:2px;
+	padding: 1em;
+	width: 20em;
+	height:700px;
+	float: left;
+	-moz-box-shadow: 0px 0px 1.25em #ccc;
+	-webkit-box-shadow: 0px 0px 1.25em #ccc;
+	box-shadow: 0px 0px 1.25em #ccc;
+}
+
+
+#status a {
+	background: url ('../images/menu.png');
+	width:315px;
+	height:38px;
+	text-decoration:none;
+	color:#ff5210;
+	float:left;
+	padding-top:40px;
+	padding-left:20px;
+}
+
 /* FONT STACK */
 body,
 input, select, textarea {
@@ -48,7 +88,7 @@ body {
 }
 
 #grailsLogo {
-	background-color: #abbf78;
+	background-color: #eee;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -108,7 +148,7 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #eee;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -401,7 +441,6 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 table {
 	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
-	width: 100%;
 	margin-bottom: 1em;
 }
 

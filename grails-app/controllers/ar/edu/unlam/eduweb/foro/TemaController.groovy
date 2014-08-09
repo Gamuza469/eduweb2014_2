@@ -29,7 +29,7 @@ class TemaController {
 					
 				temasDeLosCursos = temaCriteria.list() {
 					curso {
-						eq('profesor', usuarioConectado)
+						eq('profesor', usuarioConectado) 
 					}
 				}
 			}

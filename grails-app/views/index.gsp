@@ -2,21 +2,24 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Bienvenido a Eduweb</title>
 		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
+			.texto_principal{
+				width:500px;
+				float:left;
+				text-align:left;
+				margin-left:30px;
+				margin-top:-60px;
+			}
+			
+			.texto_principal h1{
+				font-size:40px;
+				color:#2E9AFE;
+			}
+			
+			 .texto_principal img{
+				 margin-top:-90px;
+				 margin-left:170px;
 			}
 
 			.ie6 #status {
@@ -48,6 +51,7 @@
 				margin-top: 1em;
 				margin-bottom: 0.3em;
 				font-size: 1em;
+				visibility:hidden;
 			}
 
 			p {
@@ -57,12 +61,14 @@
 
 			#controller-list ul {
 				list-style-position: inside;
+				visibility:hidden;
 			}
 
 			#controller-list li {
 				line-height: 1.3;
 				list-style-position: inside;
 				margin: 0.25em 0;
+				visibility:hidden;
 			}
 
 			@media screen and (max-width: 480px) {
@@ -81,34 +87,33 @@
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
+		    <a href="${createLink(controller:'Curso', action: 'index')}" >Ver Cursos</a>
+			<a href="${createLink(controller:'Tema', action: 'index')}" >Ingresar al Foro</a>
+			<a href="#">Chat</a>
+			<img src="${assetPath(src:'chicos2.png')}" width='321' height='115'/>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-
+			<div class='texto_principal'>
+			<sec:ifLoggedIn>
+				<h1>Bienvenido:</h1>
+				<h1>${applicationContext.springSecurityService.currentUser.username}</h1>
+            </sec:ifLoggedIn>
+            <img src="${assetPath(src:'computadora2.png')}" width='321' height='115'/>
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi turpis, 
+			adipiscing in ante quis, mattis gravida ligula. Aliquam aliquam metus neque, 
+			ac malesuada magna viverra in. Fusce eleifend pulvinar lorem, nec consectetur 
+			tellus convallis tincidunt. Nam suscipit eros eget tortor faucibus ultricies.
+			Vivamus pellentesque et nisi id ultricies. Etiam quis erat eu magna luctus 
+			auctor. Nam velit enim, mattis a orci at, venenatis dictum dui. Praesent
+			non mauris vestibulum, ultrices metus a, congue quam. Suspendisse potenti.
+			Nunc sit amet bibendum nulla. Etiam nibh lorem, aliquet adipiscing lorem 
+			aliquet, tincidunt bibendum orci. Vivamus pellentesque, magna condimentum
+			sollicitudin fringilla, justo velit tincidunt mauris, eu elementum metus
+			nulla sit amet neque.
+			</p>
+            </div>
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
 				<ul>
