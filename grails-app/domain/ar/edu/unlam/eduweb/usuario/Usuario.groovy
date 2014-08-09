@@ -42,7 +42,7 @@ class Usuario {
 		email ()
 		cursos ()
 		temas ()
-		actividades ()
+		actividades display: false 
 		alumnos nullable: true, display: false
 		password blank: false, display: false
 		enabled display: false

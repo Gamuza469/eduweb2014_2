@@ -33,139 +33,136 @@ invokeTag('captureHead','sitemesh',9,[:],1)
 printHtmlPart(3)
 createTagBody(1, {->
 printHtmlPart(4)
-invokeTag('message','g',11,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+expressionOut.print(createLink(controller:'Curso', action: 'index'))
 printHtmlPart(5)
-expressionOut.print(createLink(uri: '/'))
+expressionOut.print(createLink(controller:'Tema', action: 'index'))
 printHtmlPart(6)
-invokeTag('message','g',14,['code':("default.home.label")],-1)
+expressionOut.print(createLink(controller:'Mensaje', action: 'index'))
 printHtmlPart(7)
-createTagBody(2, {->
-invokeTag('message','g',15,['code':("default.list.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',15,['class':("list"),'action':("index")],2)
+expressionOut.print(assetPath(src:'chicos2.png'))
 printHtmlPart(8)
-createTagBody(2, {->
-invokeTag('message','g',16,['code':("default.new.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',16,['class':("create"),'action':("create")],2)
+invokeTag('message','g',17,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
 printHtmlPart(9)
-invokeTag('message','g',20,['code':("default.show.label"),'args':([entityName])],-1)
+expressionOut.print(createLink(uri: '/'))
 printHtmlPart(10)
-if(true && (flash.message)) {
+invokeTag('message','g',20,['code':("default.home.label")],-1)
 printHtmlPart(11)
-expressionOut.print(flash.message)
-printHtmlPart(12)
-}
-printHtmlPart(13)
-if(true && (cursoInstance?.alumnos)) {
-printHtmlPart(14)
-invokeTag('message','g',28,['code':("curso.alumnos.label"),'default':("Alumnos")],-1)
-printHtmlPart(15)
-for( a in (cursoInstance.alumnos) ) {
-printHtmlPart(16)
-createTagBody(4, {->
-expressionOut.print(a?.encodeAsHTML())
-})
-invokeTag('link','g',31,['controller':("alumno"),'action':("show"),'id':(a.id)],4)
-printHtmlPart(17)
-}
-printHtmlPart(18)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.actividades)) {
-printHtmlPart(20)
-invokeTag('message','g',39,['code':("curso.actividades.label"),'default':("Actividades")],-1)
-printHtmlPart(15)
-for( a in (cursoInstance.actividades) ) {
-printHtmlPart(21)
-createTagBody(4, {->
-expressionOut.print(a?.encodeAsHTML())
-})
-invokeTag('link','g',42,['controller':("actividad"),'action':("show"),'id':(a.id)],4)
-printHtmlPart(17)
-}
-printHtmlPart(18)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.apuntes)) {
-printHtmlPart(22)
-invokeTag('message','g',50,['code':("curso.apuntes.label"),'default':("Apuntes")],-1)
-printHtmlPart(15)
-for( a in (cursoInstance.apuntes) ) {
-printHtmlPart(23)
-createTagBody(4, {->
-expressionOut.print(a?.encodeAsHTML())
-})
-invokeTag('link','g',53,['controller':("apunte"),'action':("show"),'id':(a.id)],4)
-printHtmlPart(17)
-}
-printHtmlPart(18)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.descripcion)) {
-printHtmlPart(24)
-invokeTag('message','g',61,['code':("curso.descripcion.label"),'default':("Descripcion")],-1)
-printHtmlPart(25)
-invokeTag('fieldValue','g',63,['bean':(cursoInstance),'field':("descripcion")],-1)
-printHtmlPart(26)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.nombre)) {
-printHtmlPart(27)
-invokeTag('message','g',70,['code':("curso.nombre.label"),'default':("Nombre")],-1)
-printHtmlPart(28)
-invokeTag('fieldValue','g',72,['bean':(cursoInstance),'field':("nombre")],-1)
-printHtmlPart(26)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.profesor)) {
-printHtmlPart(29)
-invokeTag('message','g',79,['code':("curso.profesor.label"),'default':("Profesor")],-1)
-printHtmlPart(30)
-createTagBody(3, {->
-expressionOut.print(cursoInstance?.profesor?.encodeAsHTML())
-})
-invokeTag('link','g',81,['controller':("usuario"),'action':("show"),'id':(cursoInstance?.profesor?.id)],3)
-printHtmlPart(26)
-}
-printHtmlPart(19)
-if(true && (cursoInstance?.temas)) {
-printHtmlPart(31)
-invokeTag('message','g',88,['code':("curso.temas.label"),'default':("Temas")],-1)
-printHtmlPart(15)
-for( t in (cursoInstance.temas) ) {
-printHtmlPart(32)
-createTagBody(4, {->
-expressionOut.print(t?.encodeAsHTML())
-})
-invokeTag('link','g',91,['controller':("tema"),'action':("show"),'id':(t.id)],4)
-printHtmlPart(17)
-}
-printHtmlPart(18)
-}
-printHtmlPart(33)
 createTagBody(2, {->
-printHtmlPart(34)
+invokeTag('message','g',21,['code':("default.list.label"),'args':([entityName])],-1)
+})
+invokeTag('link','g',21,['class':("list"),'action':("index")],2)
+printHtmlPart(12)
+createTagBody(2, {->
+invokeTag('message','g',22,['code':("default.new.label"),'args':([entityName])],-1)
+})
+invokeTag('link','g',22,['class':("create"),'action':("create")],2)
+printHtmlPart(13)
+invokeTag('message','g',26,['code':("default.show.label"),'args':([entityName])],-1)
+printHtmlPart(14)
+if(true && (flash.message)) {
+printHtmlPart(15)
+expressionOut.print(flash.message)
+printHtmlPart(16)
+}
+printHtmlPart(17)
+if(true && (cursoInstance?.nombre)) {
+printHtmlPart(18)
+invokeTag('message','g',34,['code':("curso.nombre.label"),'default':("Nombre")],-1)
+printHtmlPart(19)
+invokeTag('fieldValue','g',36,['bean':(cursoInstance),'field':("nombre")],-1)
+printHtmlPart(20)
+}
+printHtmlPart(21)
+if(true && (cursoInstance?.descripcion)) {
+printHtmlPart(22)
+invokeTag('message','g',43,['code':("curso.descripcion.label"),'default':("Descripcion")],-1)
+printHtmlPart(23)
+invokeTag('fieldValue','g',45,['bean':(cursoInstance),'field':("descripcion")],-1)
+printHtmlPart(20)
+}
+printHtmlPart(21)
+if(true && (cursoInstance?.profesor)) {
+printHtmlPart(24)
+invokeTag('message','g',52,['code':("curso.profesor.label"),'default':("Profesor")],-1)
+printHtmlPart(25)
 createTagBody(3, {->
-invokeTag('message','g',100,['code':("default.button.edit.label"),'default':("Edit")],-1)
+expressionOut.print(cursoInstance?.profesor?.apellido)
+printHtmlPart(26)
+expressionOut.print(cursoInstance?.profesor?.nombre)
 })
-invokeTag('link','g',100,['class':("edit"),'action':("edit"),'resource':(cursoInstance)],3)
+invokeTag('link','g',54,['controller':("usuario"),'action':("show"),'id':(cursoInstance?.profesor?.id)],3)
+printHtmlPart(20)
+}
+printHtmlPart(21)
+if(true && (cursoInstance?.actividades)) {
+printHtmlPart(27)
+invokeTag('message','g',61,['code':("curso.actividades.label"),'default':("Actividades")],-1)
+printHtmlPart(28)
+for( a in (cursoInstance.actividades) ) {
+printHtmlPart(29)
+createTagBody(4, {->
+expressionOut.print(a?.titulo)
+printHtmlPart(30)
+expressionOut.print(a?.tipo)
+})
+invokeTag('link','g',64,['controller':("actividad"),'action':("show"),'id':(a.id)],4)
+printHtmlPart(31)
+}
+printHtmlPart(32)
+}
+printHtmlPart(21)
+if(true && (cursoInstance?.apuntes)) {
+printHtmlPart(33)
+invokeTag('message','g',72,['code':("curso.apuntes.label"),'default':("Apuntes")],-1)
+printHtmlPart(28)
+for( a in (cursoInstance.apuntes) ) {
+printHtmlPart(34)
+createTagBody(4, {->
+expressionOut.print(a?.nombre)
+})
+invokeTag('link','g',75,['controller':("apunte"),'action':("show"),'id':(a.id)],4)
+printHtmlPart(31)
+}
+printHtmlPart(32)
+}
+printHtmlPart(21)
+if(true && (cursoInstance?.temas)) {
 printHtmlPart(35)
-invokeTag('actionSubmit','g',101,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('message','g',83,['code':("curso.temas.label"),'default':("Temas")],-1)
+printHtmlPart(28)
+for( t in (cursoInstance.temas) ) {
 printHtmlPart(36)
+createTagBody(4, {->
+expressionOut.print(t?.titulo)
 })
-invokeTag('form','g',103,['url':([resource:cursoInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('link','g',86,['controller':("tema"),'action':("show"),'id':(t.id)],4)
+printHtmlPart(31)
+}
+printHtmlPart(32)
+}
 printHtmlPart(37)
-})
-invokeTag('captureBody','sitemesh',105,[:],1)
+createTagBody(2, {->
 printHtmlPart(38)
+createTagBody(3, {->
+invokeTag('message','g',95,['code':("default.button.edit.label"),'default':("Edit")],-1)
+})
+invokeTag('link','g',95,['class':("edit"),'action':("edit"),'resource':(cursoInstance)],3)
+printHtmlPart(39)
+invokeTag('actionSubmit','g',96,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+printHtmlPart(40)
+})
+invokeTag('form','g',98,['url':([resource:cursoInstance, action:'delete']),'method':("DELETE")],2)
+printHtmlPart(41)
+})
+invokeTag('captureBody','sitemesh',100,[:],1)
+printHtmlPart(42)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1407544648031L
+public static final long LAST_MODIFIED = 1407561208422L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
